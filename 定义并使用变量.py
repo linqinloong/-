@@ -1,0 +1,9 @@
+a="变量一"
+b="变量二"
+print(a)
+print(id(a))
+print(b)
+print(id(b))
+a="变量三"
+print(a)
+print(id(a))
