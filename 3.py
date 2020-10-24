@@ -14,7 +14,7 @@ class A(B):
     VarA = 1
     def __init__(self,age):
         self.age = age
-        super().__init__('abc')2
+        super().__init__('abc')
         print('调用A类构造函数')
 
     def handle(self):
