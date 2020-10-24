@@ -13,7 +13,6 @@ def sum(*nums):
         sum += num**2     #1**2+2**2+3**3
         print("sum = %d"%(sum))
 sum(1,2,3)
-
 """
 def SumFun(*args):
     result = 0

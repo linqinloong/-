@@ -1,7 +1,7 @@
 def bin_search(items, key):
     """折半查找"""
     start, end = 0, len(items) - 1
-    #start在这句话中是做初始化作用?注释掉start后出现cannot assign# to literal错误
+    #start在这句话中是做初始化作用?注释掉start后出现cannot assign# to literal错误因为start=len(items)-1为8了
   #  print(start)
   #  显示0 None
     while start <= end:

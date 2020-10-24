@@ -1,9 +1,8 @@
 """
 try -except异常处理
-
 Version: 0.1
 Author: 晏雨新
-Date: 2018-09-27
+Date: 2019-09-27
 """
 def fun(num1,num2):
     num3 = num1/num2
