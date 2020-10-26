@@ -1,7 +1,9 @@
-from sklearn.preprocessing import LabelEncoder
+# -*- coding: UTF-8 -*-
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from six import StringIO
 from sklearn import tree
 import pandas as pd
+import numpy as np
 import pydotplus
 
 if __name__ == '__main__':
@@ -12,7 +14,7 @@ if __name__ == '__main__':
 		lenses_target.append(each[-1])
 	# print(lenses_target)
 
-	lensesLabels = ['age', 'prescript', 'astigmatic', 'tearRate']			#特征标签
+	lensesLabels = ['age','beautiful', 'money', 'date']			#特征标签
 	lenses_list = []														#保存lenses数据的临时列表
 	lenses_dict = {}														#保存lenses数据的字典，用于生成pandas
 	for each_label in lensesLabels:											#提取信息，生成字典
@@ -39,3 +41,5 @@ if __name__ == '__main__':
 						special_characters=True)
 	graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
 	graph.write_pdf("tree.pdf")												#保存绘制好的决策树，以PDF的形式存储。
+
+	print(clf.predict([[1,1,1,0]]))											#预测
