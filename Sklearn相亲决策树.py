@@ -1,9 +1,8 @@
 # -*- coding: UTF-8 -*-
-from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+from sklearn.preprocessing import LabelEncoder
 from six import StringIO
 from sklearn import tree
 import pandas as pd
-import numpy as np
 import pydotplus
 
 if __name__ == '__main__':
