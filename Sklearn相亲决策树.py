@@ -12,7 +12,12 @@ if __name__ == '__main__':
 	for each in lenses:
 		lenses_target.append(each[-1])
 	# print(lenses_target)
-
+	"""
+	年龄：0代表年老，1代表年轻
+	漂亮：0代表不漂亮，1代表漂亮
+	钱：0代表没钱，1代表有钱
+	约会：0代表不去约会，1代表去约会
+	"""
 	lensesLabels = ['age','beautiful', 'money', 'date']			#特征标签
 	lenses_list = []														#保存lenses数据的临时列表
 	lenses_dict = {}														#保存lenses数据的字典，用于生成pandas
