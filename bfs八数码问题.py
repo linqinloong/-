@@ -75,18 +75,18 @@ class State:
         steps = 1
         # start the loop
         while len(openTable) > 0:
-            n = openTable.pop(0)
-            closeTable.append(n)
-            subStates = n.generateSubStates()
+            n = openTable.pop(0)        #从open表出
+            closeTable.append(n)        #进close表
+            subStates = n.generateSubStates()       #形成副本类
             path = []
             for s in subStates:
                 if (s.state == s.answer).all():
                     while s.parent and s.parent != originState:
                         path.append(s.parent)
                         s = s.parent
-                    path.reverse()
+                    path.reverse()      #列表数据反转
                     return path, steps+1
-            openTable.extend(subStates)
+            openTable.extend(subStates) #在openTable末尾一次性追加subStates中的多个值
             steps += 1
         else:
             return None, None
@@ -94,13 +94,13 @@ class State:
 if __name__ == '__main__':
     # the symbol representing the empty place
     # you can change the symbol at here
-    symbolOfEmpty = ' '
+    symbolOfEmpty = ' '     #代表空
 
     State.symbol = symbolOfEmpty
     # set the origin state of the puzzle
-    originState = State(np.array([[2, 8, 3], [1, 6 , 4], [7, symbolOfEmpty, 5]]))
+    originState = State(np.array([[2, 8, 3], [1, 6 , 4], [7, symbolOfEmpty, 5]]))       #初始状态
     # and set the right answer in terms of the origin
-    State.answer = np.array([[1, 2, 3], [7, 8, 4], [State.symbol, 6, 5]])
+    State.answer = np.array([[1, 2, 3], [7, 8, 4], [State.symbol, 6, 5]])               #目标状态
     s1 = State(state=originState.state)
     path, steps = s1.solve()
     if path:    # if find the solution
