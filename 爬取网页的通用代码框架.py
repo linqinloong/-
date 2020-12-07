@@ -9,5 +9,5 @@ def getHTMLText(url):
     except:
         return "产生异常"
 if __name__ == '__main__':
-    url = "http://quotes.money.163.com/old/"
+    url = "https://music.163.com/#/song?id=1426649237"
     print(getHTMLText(url))
